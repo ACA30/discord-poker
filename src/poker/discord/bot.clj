@@ -203,7 +203,7 @@
 (defmethod handle-event :ready [_ _]
   (let [{bot-id :id bot-name :username} @(msgs/get-current-user! @message-ch)]
     (def-ping-commands bot-id)
-    (conns/status-update! @connection-ch :activity (conns/create-activity :type :music :name (str \@ bot-name)))))
+    (conns/status-update! @connection-ch :activity (conns/create-activity :type :game :name "Texas hold 'em 🃏"))))
 
 (defn- start-bot! [{:keys [token] :as config}]
   (reset! poker.discord.bot/config config)
